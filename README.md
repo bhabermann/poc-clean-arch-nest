@@ -24,6 +24,8 @@
 
 ## Description
 
+POC based on [this link](https://pt.linkedin.com/pulse/clean-architecture-com-node-e-nestjs-como-eu-fa%C3%A7o-miguel-silva)
+
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
