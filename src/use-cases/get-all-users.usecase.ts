@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { UseCase } from 'src/core/base/use-case';
 import { UserCreatedMapper } from 'src/core/domain/mappers/user-creted.mapper';
 import { UserRepository } from 'src/core/repositories/user.repository';
@@ -14,6 +14,8 @@ export class GetAllUsersUseCase implements UseCase<UserCreatedDto[]> {
   }
 
   execute(...args: any[]): Observable<UserCreatedDto[]> {
-    throw new Error('Method not implemented.');
+    return this.repository
+      .getAll()
+      .pipe(map((data) => data.map(this.userCreatedMapper.mapTo)));
   }
 }
